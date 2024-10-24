@@ -1,0 +1,159 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f2efea;
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lowercase {
+	text-transform: lowercase;
+}
+
+h1 {
+	font-family: sans-serif;
+	font-size: 30px;
+	text-align: center;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	h1 {
+		font-size: 20px;
+	}
+}
+
+button,
+input {
+	padding: 0px;
+	margin: 0px;
+	min-width: 150px;
+	width: 100%;
+}
+
+.app-container {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	padding: 0 20px;
+}
+
+.results-container {
+	display: flex;
+	flex: 1;
+	overflow: auto;
+}
+
+.load-csv,
+.select-csv {
+	display: inline-block;
+}
+
+.select-csv {
+	flex: 1;
+}
+
+.select-csv label {
+	opacity: 0;
+	position: absolute;
+	width: 0;
+	height: 0;
+	top: 0;
+}
+
+.boxsizingBorder {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+	margin-top: 10px;
+}
+
+.first-row {
+	position: relative;
+	margin-top: 20px;
+}
+
+.last-row {
+	margin-bottom: 20px;
+}
+
+.version-number {
+	display: block;
+	position: absolute;
+	right: 5px;
+	color: #333;
+	font-size: 10px;
+}
+
+#searchInput {
+	padding: 5px 10px;
+	font-size: 25px;
+	height: 50px;
+	border-radius: 10px;
+}
+
+#searchResult {
+	margin: 0;
+	padding: 5px;
+	font-size: 16px;
+}
+
+.r {
+	padding: 5px 0;
+}
+
+.r .k,
+.r .v {
+	display: inline-block;
+}
+
+#textTransformSwitch:hover,
+.r .k:hover,
+.r .v:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.r .k {
+	color: #a33;
+}
+
+.r .d {
+	color: #aaa;
+	margin: 0 7px;
+}
+
+.r .v {
+	color: #33a;
+}
+
+@keyframes bounce {
+	0% {
+		background-color: rgba(0, 0, 0, 0);
+	}
+	50% {
+		background-color: rgb(0, 255, 0, 0.25);
+		transform: scale(0.9);
+	}
+	100% {
+		background-color: rgba(0, 0, 0, 0);
+		transform: scale(1);
+	}
+}
+
+.clicked-text {
+	animation: bounce 0.2s forwards;
+}
