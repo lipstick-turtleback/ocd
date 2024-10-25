@@ -46,6 +46,8 @@
 		selectedFile = fileInputEl?.files?.[0];
 
 		console.log(selectedFile);
+
+		onReadCsvFileClick();
 	};
 
 	const startSelectingNewFile = () => {
@@ -71,13 +73,6 @@
 				onchange={onSelectedFileChange}
 			/>
 		</div>
-		{#if selectedFile}
-			<div class="load-csv">
-				<button id="readFileButton" class="boxsizingBorder" onclick={onReadCsvFileClick}>
-					Read File
-				</button>
-			</div>
-		{/if}
 	{/if}
 </div>
 
