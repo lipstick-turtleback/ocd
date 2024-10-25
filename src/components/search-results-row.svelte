@@ -26,7 +26,7 @@
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
 <!-- svelte-ignore a11y_no_static_element_interactions -->
-{#if keyValuePairs?.length >= 0}
+{#if keyValuePairs?.length > 0}
 	<div class="row results-container" onclick={onKeyValueClick}>
 		{#each keyValuePairs as keyValuePair}
 			<ResultLine {keyValuePair} />

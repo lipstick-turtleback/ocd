@@ -34,12 +34,12 @@ body {
 }
 
 .last-row {
-	margin-bottom: 50px;
+	margin: 25px;
 	justify-content: center;
 	flex-direction: column;
-    align-items: center;
+	align-items: center;
+	overflow: hidden;
 }
-
 
 @keyframes bounce {
 	0% {

@@ -57,12 +57,8 @@
 
 <div class="row last-row">
 	{#key redrawCounter}
-		<div>
-			{sharedState.dictionaryItems.length} lines loaded!
-		</div>
-
 		<div class="xxx">
-			<a href="#" onclick={setRedraw}> Click here to select a new CSV. </a>
+			<a href="#" onclick={setRedraw}>Click here to select a new CSV.</a>
 			<div class="select-csv">
 				<label for="csvFileInput">Choose CSV file.</label>
 				<input
