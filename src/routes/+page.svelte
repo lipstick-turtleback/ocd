@@ -53,5 +53,5 @@
 
 	<SearchResultsRow keyValuePairs={searchResultsKeyValuePairs} />
 
-	<FileReaderRow {setMessageText} />
+	<FileReaderRow {setMessageText} {setSetSearchResultsKeyValuePairs} />
 </div>
