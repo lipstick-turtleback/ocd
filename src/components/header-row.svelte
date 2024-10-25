@@ -19,15 +19,36 @@
 	</h1>
 
 	<div class="version-number">
-		<a href="https://github.com/lipstick-turtleback/ocd" target="_blank">
-			v241025
-		</a>
+		<a href="https://github.com/lipstick-turtleback/ocd" target="_blank"> v241025 </a>
 	</div>
 </div>
 
 <style>
+	h1 {
+		font-family: sans-serif;
+		font-size: 30px;
+		text-align: center;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	@media only screen and (max-width: 600px) {
+		h1 {
+			font-size: 20px;
+		}
+	}
+
 	.text-transform-switch a {
 		text-decoration: none;
 		color: #333;
+	}
+
+	.version-number {
+		display: block;
+		position: absolute;
+		right: 5px;
+		color: #333;
+		font-size: 10px;
 	}
 </style>

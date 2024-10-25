@@ -24,7 +24,6 @@
 			tryToSaveDictionaryItems(items);
 			setMessageText(`${items.length} lines loaded!`);
 			setSetSearchResultsKeyValuePairs([]);
-			selectedFile = null;
 		} else {
 			setMessageText('No valid entries found in the CSV file.');
 		}
@@ -49,7 +48,7 @@
 </script>
 
 <div class="row last-row">
-	<div class="select-csv">
+	<div class="select-csv {!selectedFile ? 'no-file' : 'with-file'}">
 		<label for="csvFileInput">Choose CSV file.</label>
 		<input
 			type="file"
@@ -60,10 +59,37 @@
 		/>
 	</div>
 	{#if selectedFile}
-		<div class="load-csv">
+		<div class="load-csv {!selectedFile ? 'no-file' : 'with-file'}">
 			<button id="readFileButton" class="boxsizingBorder" onclick={onReadCsvFileClick}>
 				Read File
 			</button>
 		</div>
 	{/if}
 </div>
+
+<style>
+	.load-csv,
+	.select-csv {
+		display: inline-block;
+	}
+
+	.select-csv {
+		flex: 1;
+	}
+
+	.no-file {
+		color: #b00;
+	}
+
+	.with-file {
+		color: #008600;
+	}
+
+	.select-csv label {
+		opacity: 0;
+		position: absolute;
+		width: 0;
+		height: 0;
+		top: 0;
+	}
+</style>

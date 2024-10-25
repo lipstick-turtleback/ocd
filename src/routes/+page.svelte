@@ -55,3 +55,12 @@
 
 	<FileReaderRow {setMessageText} {setSetSearchResultsKeyValuePairs} />
 </div>
+
+<style>
+	.app-container {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px;
+	}
+</style>

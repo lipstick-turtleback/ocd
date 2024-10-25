@@ -53,12 +53,25 @@
 <div class="row">
 	<input
 		type="text"
-		id="searchInput"
 		placeholder="search here"
-		class="boxsizingBorder"
+		class="search-input boxsizingBorder"
 		autocomplete="off"
 		onchange={onInputChange}
 		oninput={onInputChange}
 		bind:value={searchString}
 	/>
 </div>
+
+<style>
+	.search-input {
+		padding: 0px;
+		margin: 0px;
+		min-width: 150px;
+		width: 100%;
+
+		padding: 5px 10px;
+		font-size: 25px;
+		height: 50px;
+		border-radius: 10px;
+	}
+</style>
