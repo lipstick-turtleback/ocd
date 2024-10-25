@@ -6,6 +6,7 @@
 	let { setMessageText, setSetSearchResultsKeyValuePairs } = $props();
 
 	let selectedFile = $state(null);
+	let selectingNewFile = $state(false);
 
 	const tryToSaveDictionaryItems = (items) => {
 		try {
@@ -24,6 +25,7 @@
 			tryToSaveDictionaryItems(items);
 			setMessageText(`${items.length} lines loaded!`);
 			setSetSearchResultsKeyValuePairs([]);
+			selectingNewFile = false;
 		} else {
 			setMessageText('No valid entries found in the CSV file.');
 		}
@@ -45,25 +47,37 @@
 
 		console.log(selectedFile);
 	};
+
+	const startSelectingNewFile = () => {
+		selectingNewFile = true;
+	};
 </script>
 
 <div class="row last-row">
-	<div class="select-csv {!selectedFile ? 'no-file' : 'with-file'}">
-		<label for="csvFileInput">Choose CSV file.</label>
-		<input
-			type="file"
-			id="csvFileInput"
-			accept=".csv"
-			class="boxsizingBorder"
-			onchange={onSelectedFileChange}
-		/>
-	</div>
-	{#if selectedFile}
-		<div class="load-csv {!selectedFile ? 'no-file' : 'with-file'}">
-			<button id="readFileButton" class="boxsizingBorder" onclick={onReadCsvFileClick}>
-				Read File
-			</button>
+	{#if sharedState.dictionaryItems.length > 0 && !selectingNewFile}
+		<div>
+			{sharedState.dictionaryItems.length} lines loaded!
+			<a href="#" onclick={startSelectingNewFile}>Click here to select a new CSV.</a>
 		</div>
+	{/if}
+	{#if selectingNewFile || sharedState.dictionaryItems.length == 0}
+		<div class="select-csv">
+			<label for="csvFileInput">Choose CSV file.</label>
+			<input
+				type="file"
+				id="csvFileInput"
+				accept=".csv"
+				class="boxsizingBorder"
+				onchange={onSelectedFileChange}
+			/>
+		</div>
+		{#if selectedFile}
+			<div class="load-csv">
+				<button id="readFileButton" class="boxsizingBorder" onclick={onReadCsvFileClick}>
+					Read File
+				</button>
+			</div>
+		{/if}
 	{/if}
 </div>
 
@@ -71,18 +85,6 @@
 	.load-csv,
 	.select-csv {
 		display: inline-block;
-	}
-
-	.select-csv {
-		flex: 1;
-	}
-
-	.no-file {
-		color: #b00;
-	}
-
-	.with-file {
-		color: #008600;
 	}
 
 	.select-csv label {
