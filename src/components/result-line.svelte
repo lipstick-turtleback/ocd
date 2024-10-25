@@ -10,7 +10,8 @@
 	// TODO: optimize this later
 	const onlyTags = values
 		.filter((x) => x.startsWith('[') && x.endsWith(']'))
-		.map((x) => x.slice(1).slice(0, -1));
+		.map((x) => x.slice(1).slice(0, -1))
+		.map((x) => x.trim());
 	const onlyValues = values.filter((x) => !x.startsWith('[') && !x.endsWith(']'));
 </script>
 
@@ -52,7 +53,7 @@
 	}
 
 	.r .d {
-		color: #aaa;
+		color: #ccc;
 		margin: 0 7px;
 	}
 
@@ -61,6 +62,10 @@
 	}
 
 	.r .t {
-		color: #393;
+		background-color: #dddddd;
+		color: #000;
+		padding: 2px 10px;
+		font-size: 12px;
+		border-radius: 5px;
 	}
 </style>
