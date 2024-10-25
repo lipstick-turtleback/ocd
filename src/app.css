@@ -39,6 +39,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	overflow: hidden;
+	min-height: 20px;
 }
 
 @keyframes bounce {

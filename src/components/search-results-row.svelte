@@ -37,8 +37,8 @@
 <style>
 	.results-container {
 		display: flex;
-		flex: 1;
 		flex-direction: column;
 		overflow: auto;
+		max-height: 100vh;
 	}
 </style>
