@@ -1,6 +1,7 @@
 <script>
 	import { sharedState } from '../shared-state';
 	import { config } from '../config';
+	import { onMount } from 'svelte';
 
 	let { setMessageText = () => {}, setSetSearchResultsKeyValuePairs } = $props();
 
@@ -48,6 +49,12 @@
 		let pairs = searchForTranslationPairs(tmp);
 		setSetSearchResultsKeyValuePairs(pairs);
 	};
+
+	let inputElRef;
+
+	onMount(function () {
+		inputElRef.focus();
+	});
 </script>
 
 <div class="row">
@@ -59,6 +66,7 @@
 		onchange={onInputChange}
 		oninput={onInputChange}
 		bind:value={searchString}
+		bind:this={inputElRef}
 	/>
 </div>
 
