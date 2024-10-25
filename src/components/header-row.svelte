@@ -15,12 +15,17 @@
 <div class="row first-row">
 	<!-- svelte-ignore a11y_click_events_have_key_events -->
 	<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-	<h1 id="textTransformSwitch" class="v" onclick={onTextTransformSwitchClick}>
-		Offline СSV Dictionary
-	</h1>
+	<h1 class="text-transform-switch" onclick={onTextTransformSwitchClick}>Offline СSV Dictionary</h1>
 	<div class="version-number">
 		<a href="https://github.com/lipstick-turtleback/awesome-dictionary" target="_blank">
 			v24.10.24
 		</a>
 	</div>
 </div>
+
+<style>
+	.text-transform-switch:hover {
+		text-decoration: underline;
+		cursor: pointer;
+	}
+</style>

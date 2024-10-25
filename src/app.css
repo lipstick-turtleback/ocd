@@ -120,35 +120,6 @@ input {
 	flex-direction: column;
 }
 
-.r {
-	padding: 5px 0;
-}
-
-.r .k,
-.r .v {
-	display: inline-block;
-}
-
-#textTransformSwitch:hover,
-.r .k:hover,
-.r .v:hover {
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-.r .k {
-	color: #a33;
-}
-
-.r .d {
-	color: #aaa;
-	margin: 0 7px;
-}
-
-.r .v {
-	color: #33a;
-}
-
 @keyframes bounce {
 	0% {
 		background-color: rgba(0, 0, 0, 0);
