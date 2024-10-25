@@ -74,7 +74,7 @@
 
 	// Handle file selection and reading
 	const onReadCsvFileClick = () => {
-		const fileInputEl = browser && window.document.getElementById('csvFileInput');
+		const fileInputEl = window.document.getElementById('csvFileInput');
 		const selectedFile = fileInputEl?.files?.[0];
 		if (!selectedFile) {
 			alert('Please select a CSV file first.');

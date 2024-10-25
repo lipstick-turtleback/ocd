@@ -106,7 +106,8 @@ input {
 }
 
 .message-text {
-	padding: 10px 5px;
+	padding: 10px;
+	justify-content: center;
 }
 
 .search-result {

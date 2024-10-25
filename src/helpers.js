@@ -36,7 +36,7 @@ const parseCSVContent = (data = '') => {
 // Handle errors
 const handleError = (message, error) => {
 	console.error(message, error);
-	// alert(message);
+	alert(message);
 };
 
 // Utility function to escape HTML special characters
