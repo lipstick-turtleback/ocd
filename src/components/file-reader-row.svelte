@@ -59,6 +59,7 @@
 	{#if sharedState.dictionaryItems.length > 0 && !selectingNewFile}
 		<div>
 			{sharedState.dictionaryItems.length} lines loaded!
+			<!-- svelte-ignore a11y_invalid_attribute -->
 			<a href="#" onclick={startSelectingNewFile}>Click here to select a new CSV.</a>
 		</div>
 	{/if}
@@ -77,7 +78,6 @@
 </div>
 
 <style>
-	.load-csv,
 	.select-csv {
 		display: inline-block;
 	}
