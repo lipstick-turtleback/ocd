@@ -49,15 +49,12 @@ const escapeHtml = (unsafe) => {
 		.replace(/'/g, '&#039;');
 };
 
-const divider = '~';
-
 const helpers = {
 	detectSeparator,
 	rowToDictRecordObj,
 	parseCSVContent,
 	handleError,
-	escapeHtml,
-	divider
+	escapeHtml
 };
 
 export { helpers };
