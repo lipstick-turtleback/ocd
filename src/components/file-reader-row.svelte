@@ -58,6 +58,7 @@
 <div class="row last-row">
 	{#key redrawCounter}
 		<div class="xxx">
+			<!-- svelte-ignore a11y_invalid_attribute -->
 			<a href="#" onclick={setRedraw}>Click here to select a new CSV.</a>
 			<div class="select-csv">
 				<label for="csvFileInput">Choose CSV file.</label>
