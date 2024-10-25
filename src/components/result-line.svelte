@@ -5,14 +5,24 @@
 
 	const key = helpers.escapeHtml(keyValuePair?.key);
 	const value = helpers.escapeHtml(keyValuePair?.value);
-	const values = value.split(';');
+	const values = value.split(';').map((x) => x.trim());
+
+	// TODO: optimize this later
+	const onlyTags = values
+		.filter((x) => x.startsWith('[') && x.endsWith(']'))
+		.map((x) => x.slice(1).slice(0, -1));
+	const onlyValues = values.filter((x) => !x.startsWith('[') && !x.endsWith(']'));
 </script>
 
 <div class="r">
 	<div class="k">{key}</div>
 	<div class="d">{divider}</div>
-	{#each values as val, i}
+	{#each onlyValues as val, i}
 		<div class="v">{val}</div>
+		{#if i + 1 < values.length}<div class="d">;</div>{/if}
+	{/each}
+	{#each onlyTags as tag, i}
+		<div class="t">{tag}</div>
 		{#if i + 1 < values.length}<div class="d">;</div>{/if}
 	{/each}
 </div>
@@ -25,12 +35,14 @@
 	}
 
 	.r .k,
-	.r .v {
+	.r .v,
+	.r .t {
 		display: inline-block;
 	}
 
 	.r .k:hover,
-	.r .v:hover {
+	.r .v:hover,
+	.r .t:hover {
 		text-decoration: underline;
 		cursor: pointer;
 	}
@@ -46,5 +58,9 @@
 
 	.r .v {
 		color: #33a;
+	}
+
+	.r .t {
+		color: #393;
 	}
 </style>

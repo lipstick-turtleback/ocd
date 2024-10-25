@@ -7,7 +7,7 @@
 	const onKeyValueClick = async (event) => {
 		try {
 			const elClasses = event?.target?.classList;
-			if (elClasses.contains('k') || elClasses.contains('v')) {
+			if (elClasses.contains('k') || elClasses.contains('v') || elClasses.contains('t')) {
 				const text = event?.target?.innerText;
 				console.log(`click -> copy -> ${text}`);
 
