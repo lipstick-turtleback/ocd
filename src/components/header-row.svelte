@@ -15,12 +15,12 @@
 <div class="row first-row">
 	<h1 class="text-transform-switch">
 		<!-- svelte-ignore a11y_invalid_attribute -->
-		<a href="#" onclick={onTextTransformSwitchClick}>Offline СSV Dictionary</a>
+		<a href="#" onclick={onTextTransformSwitchClick}>Offline СSV Dict v2.0</a>
 	</h1>
 
 	<div class="version-number">
-		<a href="https://github.com/lipstick-turtleback/awesome-dictionary" target="_blank">
-			v24.10.24
+		<a href="https://github.com/lipstick-turtleback/ocd" target="_blank">
+			v241025
 		</a>
 	</div>
 </div>
