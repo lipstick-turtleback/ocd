@@ -24,6 +24,7 @@
 			tryToSaveDictionaryItems(items);
 			setMessageText(`${items.length} lines loaded!`);
 			setSetSearchResultsKeyValuePairs([]);
+			selectedFile = null;
 		} else {
 			setMessageText('No valid entries found in the CSV file.');
 		}
