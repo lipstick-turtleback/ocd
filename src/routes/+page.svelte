@@ -20,6 +20,7 @@
 
 	const setMessageText = (text = '') => {
 		messageText = text;
+		console.log(text);
 	};
 
 	const setSetSearchResultsKeyValuePairs = (val = []) => {

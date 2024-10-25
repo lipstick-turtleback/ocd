@@ -6,7 +6,7 @@
 	let { setMessageText, setSetSearchResultsKeyValuePairs } = $props();
 
 	let selectedFile = $state(null);
-	let selectingNewFile = $state(false);
+	let redrawCounter = $state(null);
 
 	const tryToSaveDictionaryItems = (items) => {
 		try {
@@ -25,7 +25,7 @@
 			tryToSaveDictionaryItems(items);
 			setMessageText(`${items.length} lines loaded!`);
 			setSetSearchResultsKeyValuePairs([]);
-			selectingNewFile = false;
+			setRedraw();
 		} else {
 			setMessageText('No valid entries found in the CSV file.');
 		}
@@ -50,36 +50,48 @@
 		onReadCsvFileClick();
 	};
 
-	const startSelectingNewFile = () => {
-		selectingNewFile = true;
+	const setRedraw = () => {
+		redrawCounter = new Date();
 	};
 </script>
 
 <div class="row last-row">
-	{#if sharedState.dictionaryItems.length > 0 && !selectingNewFile}
+	{#key redrawCounter}
 		<div>
 			{sharedState.dictionaryItems.length} lines loaded!
-			<!-- svelte-ignore a11y_invalid_attribute -->
-			<a href="#" onclick={startSelectingNewFile}>Click here to select a new CSV.</a>
 		</div>
-	{/if}
-	{#if selectingNewFile || sharedState.dictionaryItems.length == 0}
-		<div class="select-csv">
-			<label for="csvFileInput">Choose CSV file.</label>
-			<input
-				type="file"
-				id="csvFileInput"
-				accept=".csv"
-				class="boxsizingBorder"
-				onchange={onSelectedFileChange}
-			/>
+
+		<div class="xxx">
+			<a href="#" onclick={setRedraw}> Click here to select a new CSV. </a>
+			<div class="select-csv">
+				<label for="csvFileInput">Choose CSV file.</label>
+				<input
+					type="file"
+					id="csvFileInput"
+					accept=".csv"
+					class="boxsizingBorder"
+					onchange={onSelectedFileChange}
+				/>
+			</div>
 		</div>
-	{/if}
+	{/key}
 </div>
 
 <style>
 	.select-csv {
 		display: inline-block;
+	}
+
+	.xxx {
+		position: relative;
+	}
+
+	.select-csv {
+		position: absolute;
+		background-color: red;
+		opacity: 0;
+		cursor: pointer;
+		left: -15px;
 	}
 
 	.select-csv label {
