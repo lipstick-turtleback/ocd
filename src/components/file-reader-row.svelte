@@ -59,10 +59,10 @@
 	{#key redrawCounter}
 		<div class="links-container">
 			<!-- svelte-ignore a11y_invalid_attribute -->
-			<a href="#" onclick={setRedraw}>Choose CSV file.</a>
+			<a href="#" onclick={setRedraw}>Choose CSV file</a>
 			<a href="/example.csv">example.csv</a>
 			<div class="file-selector">
-				<label for="csvFileInput">Choose CSV file.</label>
+				<label for="csvFileInput">Choose CSV file</label>
 				<input
 					type="file"
 					id="csvFileInput"
