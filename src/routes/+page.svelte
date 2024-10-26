@@ -33,9 +33,9 @@
 			const storedItems = localStorage.getItem(config.LOCAL_STORAGE_ITEM_KEY);
 			if (storedItems) {
 				sharedState.dictionaryItems = JSON.parse(storedItems);
-				setMessageText(`${sharedState.dictionaryItems.length} lines loaded!`);
+				setMessageText(`${sharedState.dictionaryItems.length} lines loaded from browser localstorage.`);
 			} else {
-				setMessageText('Start by selecting a CSV file.');
+				setMessageText('Start by selecting a CSV file on your device.');
 			}
 		} catch (error) {
 			helpers.handleError('Error loading dictionary from localStorage', error);

@@ -23,7 +23,7 @@
 		if (items.length > 0) {
 			sharedState.dictionaryItems = items;
 			tryToSaveDictionaryItems(items);
-			setMessageText(`${items.length} lines loaded!`);
+			setMessageText(`${items.length} lines loaded from csv file.`);
 			setSetSearchResultsKeyValuePairs([]);
 			setRedraw();
 		} else {
