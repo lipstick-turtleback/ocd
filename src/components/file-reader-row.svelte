@@ -55,12 +55,13 @@
 	};
 </script>
 
-<div class="row last-row">
+<div class="row last-row xxx">
 	{#key redrawCounter}
-		<div class="xxx">
+		<div class="links-container">
 			<!-- svelte-ignore a11y_invalid_attribute -->
-			<a href="#" onclick={setRedraw}>Click here to select a new CSV.</a>
-			<div class="select-csv">
+			<a href="#" onclick={setRedraw}>Choose CSV file.</a>
+			<a href="/example.csv">example.csv</a>
+			<div class="file-selector">
 				<label for="csvFileInput">Choose CSV file.</label>
 				<input
 					type="file"
@@ -75,27 +76,25 @@
 </div>
 
 <style>
-	.select-csv {
-		display: inline-block;
-	}
-
-	.xxx {
+	.links-container {
 		position: relative;
 	}
 
-	.select-csv {
-		position: absolute;
-		background-color: red;
-		opacity: 0;
-		cursor: pointer;
-		left: -15px;
+	.links-container a {
+		margin: 10px 25px;
+		display: inline-block;
 	}
 
-	.select-csv label {
+	.file-selector input {
+		display: none;
+	}
+
+	.file-selector label {
 		opacity: 0;
 		position: absolute;
-		width: 0;
-		height: 0;
-		top: 0;
+		display: inline-block;
+		top: 10px;
+		left: 25px;
+		cursor: pointer;
 	}
 </style>
