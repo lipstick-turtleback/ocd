@@ -81,7 +81,7 @@
 	}
 
 	.links-container a {
-		margin: 10px 25px;
+		margin: 10px 20px;
 		display: inline-block;
 	}
 
@@ -94,7 +94,7 @@
 		position: absolute;
 		display: inline-block;
 		top: 10px;
-		left: 25px;
+		left: 20px;
 		cursor: pointer;
 	}
 </style>
