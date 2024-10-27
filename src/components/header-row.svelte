@@ -19,7 +19,7 @@
 	</h1>
 
 	<div class="version-number">
-		<a href="https://github.com/lipstick-turtleback/ocd" target="_blank"> v241025 </a>
+		<a href="https://github.com/lipstick-turtleback/ocd" target="_blank"> v241027 </a>
 	</div>
 </div>
 

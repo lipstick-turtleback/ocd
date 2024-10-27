@@ -5,13 +5,17 @@
 
 	const key = helpers.escapeHtml(keyValuePair?.key);
 	const value = helpers.escapeHtml(keyValuePair?.value);
-	const values = value.split(';').map((x) => x.trim());
+	const values = value
+		.split(';')
+		.map((x) => x.trim())
+		.filter((x) => !!x);
 
 	// TODO: optimize this later
 	const onlyTags = values
 		.filter((x) => x.startsWith('[') && x.endsWith(']'))
 		.map((x) => x.slice(1).slice(0, -1))
-		.map((x) => x.trim());
+		.map((x) => x.trim())
+		.filter((x) => !!x);
 	const onlyValues = values.filter((x) => !x.startsWith('[') && !x.endsWith(']'));
 </script>
 
