@@ -16,14 +16,29 @@
 		}
 	};
 
+	const deduplicateItems = (tmpItems = []) => {
+		let tmp = {};
+		tmpItems.forEach((itm) => {
+			tmp[`${itm?.key}_${itm?.value}`] = itm;
+		});
+
+		let resultItems = [];
+		Object.entries(tmp).forEach(([key, value]) => {
+			resultItems.push(value);
+		});
+
+		return resultItems;
+	};
+
 	const onCsvFileLoad = (event) => {
 		const csvContent = event.target.result;
-		const items = helpers.parseCSVContent(csvContent);
+		const tmpItems = helpers.parseCSVContent(csvContent);
+		let items = deduplicateItems(tmpItems);
 
 		if (items.length > 0) {
 			sharedState.dictionaryItems = items;
 			tryToSaveDictionaryItems(items);
-			setMessageText(`${items.length} lines loaded from csv file.`);
+			setMessageText(`${items.length} unique lines were loaded from the csv file.`);
 			setSetSearchResultsKeyValuePairs([]);
 			setRedraw();
 		} else {
