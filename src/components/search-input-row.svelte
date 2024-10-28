@@ -63,7 +63,6 @@
 		placeholder="search here"
 		class="search-input boxsizingBorder"
 		autocomplete="off"
-		onchange={onInputChange}
 		oninput={onInputChange}
 		bind:value={searchString}
 		bind:this={inputElRef}
